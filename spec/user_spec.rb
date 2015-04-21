@@ -6,7 +6,7 @@ describe User do
     expect(User.count).to eq(1)
   end
 
-  it 'can retrie email from the db' do
+  it 'can retrieve email from the db' do
     User.create(email: 'm@m.com')
     user = User.first
     expect(user.email).to eq('m@m.com')
