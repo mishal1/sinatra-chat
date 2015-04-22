@@ -1,6 +1,6 @@
 get '/users/new' do
   @user = User.new
-  erb :sign_in
+  erb :sign_up
 end
 
 post '/users' do
@@ -12,6 +12,6 @@ post '/users' do
     redirect to '/'
   else
     flash[:errors] = @user.errors.full_messages
-    erb :sign_in
+    erb :sign_up
   end
 end
