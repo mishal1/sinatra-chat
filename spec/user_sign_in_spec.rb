@@ -7,6 +7,7 @@ feature 'The sign up process' do
 
   scenario 'with a password that does not match' do
     expect { sign_up('random') }.to change(User, :count).by(0)
+    expect(page).to have_button ('Sign up')
   end
 
   def sign_up(password_confirmation = 'password', email = 'm@m.com', password = 'password')
