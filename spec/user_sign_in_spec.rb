@@ -9,7 +9,6 @@ feature 'User signs in' do
     visit '/'
     expect(page).not_to have_content('Welcome, m@m.com')
     sign_in
-    save_and_open_page
     expect(page).to have_content('Welcome, m@m.com')
   end
 
