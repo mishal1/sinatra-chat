@@ -1,5 +1,4 @@
 describe User do
-  
   it 'can be created' do
     expect(User.count).to eq(0)
     User.create(email: 'm@m.com')
@@ -11,5 +10,4 @@ describe User do
     user = User.first
     expect(user.email).to eq('m@m.com')
   end
-
 end
