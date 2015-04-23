@@ -13,3 +13,9 @@ post '/sessions' do
     erb :sign_in
   end
 end
+
+delete '/sessions' do
+  flash[:notice] = 'Goodbye!'
+  session[:user_id] = nil
+  redirect to('/')
+end

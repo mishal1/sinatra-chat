@@ -19,6 +19,13 @@ feature 'User signs in' do
     expect(page).to have_content('Incorrect credentials')
   end
 
+  scenario 'can sign out' do
+    sign_in
+    click_button 'Sign out'
+    expect(page).not_to have_content('Sign out')
+    expect(page).to have_content('Goodbye!')
+  end
+
   def sign_in(email = 'm@m.com',
               password = 'password')
     visit '/'
