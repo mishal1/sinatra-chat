@@ -1,8 +1,19 @@
-Please Sign up:
+<header><b>Please Sign up:</b></header>
 
-<form action='/users' method='post'>
-  Email: <input name='email' type='text' value='<%= @user.email %>'>
-  Password: <input name='password' type='password'>
-  Password Confirmation: <input name='password_confirmation' type='password'>
-  <input type='submit' value='Sign up'>
-</form>
+<container class='form-container'>
+  <form action='/users' method='post'>
+    Email: 
+    <br>
+    <input name='email' type='text' value='<%= @user.email %>'>
+    <br>
+    Password: 
+    <br>
+    <input name='password' type='password'>
+    <br>
+    Password Confirmation: 
+    <br>
+    <input name='password_confirmation' type='password'>
+    <br>
+    <input type='submit' value='Sign up' id='submit-button'>
+  </form>
+</container>

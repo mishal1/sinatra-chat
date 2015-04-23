@@ -1,3 +1,8 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/reset.css"> 
+  <link rel="stylesheet" href="/css/index.css" type="text/css">
+</head>
+
 <body>
 
   <% if current_user %>
@@ -7,14 +12,14 @@
       <input type='submit' value='Sign out'>
     </form>
   <% end %>
-  <ul>
+  <ul id='error'>
   <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
       <li><%= error %></li>
     <% end %>
   <% end %>
   <% if flash[:notice] %>
-    <%= flash[:notice] %>
+    <%= flash[:notice] %> 
   <% end %>
   </ul>
 

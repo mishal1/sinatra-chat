@@ -9,13 +9,13 @@ post '/sessions' do
     session[:user_id] = user.id
     redirect to '/'
   else
-    flash[:errors] = ['Incorrect credentials']
+    flash.now[:errors] = ['Incorrect credentials']
     erb :sign_in
   end
 end
 
 delete '/sessions' do
-  flash[:notice] = 'Goodbye!'
+  flash.now[:notice] = 'Goodbye!'
   session[:user_id] = nil
   redirect to('/')
 end

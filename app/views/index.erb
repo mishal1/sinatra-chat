@@ -1,2 +1,8 @@
-<a href='users/new'>Sign up</a>
-<a href='sessions/new'>Sign in</a>
+<% if !current_user %>
+
+  <container id='sign-in-container'>
+    <a href='users/new' class='not-signed-in-buttons'>Sign up</a>
+    <a href='sessions/new' class='not-signed-in-buttons'>Sign in</a>
+  </container>
+
+<% end %>
