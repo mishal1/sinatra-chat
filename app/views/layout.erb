@@ -7,8 +7,8 @@
 
   <% if current_user %>
     Welcome, <%= current_user.email %>
-    <form method='post' action='/sessions'>
-      <input type='hidden' name='_method' value='delete'>
+    <form method='post' action='/sessions/delete'>
+      <input type='hidden' name='method' value='delete'>
       <input type='submit' value='Sign out'>
     </form>
   <% end %>
@@ -17,9 +17,6 @@
     <% flash[:errors].each do |error| %>
       <li><%= error %></li>
     <% end %>
-  <% end %>
-  <% if flash[:notice] %>
-    <%= flash[:notice] %> 
   <% end %>
   </ul>
 

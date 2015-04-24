@@ -11,6 +11,7 @@ feature 'The sign up process' do
 
   scenario 'with an email that is not unique' do
     sign_up
+    click_button 'Sign out'
     expect { sign_up }.to change(User, :count).by(0)
     expect(page).to have_content('This email is already taken')
   end
