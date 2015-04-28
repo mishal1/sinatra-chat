@@ -1,8 +1,16 @@
-<% if !current_user %>
+<head>
+  <link rel="stylesheet" href="/css/index.css" type="text/css">
+</head>
 
-  <container id='sign-in-container'>
-    <a href='users/new' class='not-signed-in-buttons'>Sign up</a>
-    <a href='sessions/new' class='not-signed-in-buttons'>Sign in</a>
-  </container>
+<body>
 
-<% end %>
+  <% if !current_user %>
+
+    <container id='sign-in-container'>
+      <a href='users/new' class='not-signed-in-buttons'>Sign up</a>
+      <a href='sessions/new' class='not-signed-in-buttons'>Sign in</a>
+    </container>
+
+  <% end %>
+  
+</body>

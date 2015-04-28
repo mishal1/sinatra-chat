@@ -1,15 +1,14 @@
 feature 'User signs in' do
   before(:each) do
-    User.create(email: 'm@m.com',
-                password: 'password',
-                password_confirmation: 'password')
+    sign_up
+    click_button 'Sign out'
   end
 
   scenario 'with correct credentials' do
     visit '/'
-    expect(page).not_to have_content('Welcome, m@m.com')
+    expect(page).not_to have_content('Welcome, Mishal')
     sign_in
-    expect(page).to have_content('Welcome, m@m.com')
+    expect(page).to have_content('Welcome, Mishal')
   end
 
   scenario 'with incorrect credentials' do
@@ -24,14 +23,5 @@ feature 'User signs in' do
     click_button 'Sign out'
     expect(page).not_to have_content('Sign out')
     expect(page).to have_content('Sign up Sign in')
-  end
-
-  def sign_in(email = 'm@m.com',
-              password = 'password')
-    visit '/'
-    click_link 'Sign in'
-    fill_in 'email', with: email
-    fill_in 'password', with: password
-    click_button 'Sign in'
   end
 end

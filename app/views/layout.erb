@@ -1,12 +1,11 @@
 <head>
   <link rel="stylesheet" type="text/css" href="/css/reset.css"> 
-  <link rel="stylesheet" href="/css/index.css" type="text/css">
 </head>
 
 <body>
 
   <% if current_user %>
-    Welcome, <%= current_user.email %>
+    Welcome, <%= current_user.name %>
     <form method='post' action='/sessions/delete'>
       <input type='hidden' name='method' value='delete'>
       <input type='submit' value='Sign out'>
