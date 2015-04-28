@@ -1,5 +1,4 @@
-class Chat < Sinatra::Base
-  
+class App < Sinatra::Base
   get '/sessions/new' do
     erb :sign_in
   end

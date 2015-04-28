@@ -1,8 +1,4 @@
-class Chat < Sinatra::Base
-  enable :sessions
-  set :session_secret, 'super secret'
-  use Rack::Flash
-
+class App < Sinatra::Base
   get '/' do
     erb :index
   end

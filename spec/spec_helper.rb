@@ -3,7 +3,7 @@ require 'database_cleaner'
 require 'capybara/rspec'
 require 'tilt/erubis'
 
-Capybara.app = Chat
+Capybara.app = App
 
 ENV['RACK_ENV'] = 'test'
 

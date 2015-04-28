@@ -1,15 +1,21 @@
 require 'sinatra/base'
 require 'data_mapper'
 require 'rack-flash'
-require_relative './datamapper_setup'
+require 'tilt/erb'
+require 'sinatra-websocket'
 require_relative './controllers/helper'
 require_relative './controllers/homepage'
 require_relative './controllers/users'
 require_relative './controllers/sessions'
+require_relative './controllers/chat'
+require_relative './datamapper_setup'
 
-class Chat < Sinatra::Base
+class App < Sinatra::Base
+  set :server, 'thin'
+  set :sockets, []
   set :views, proc { File.join(root, '..', 'views') }
-  set :public, proc { File.join(root, '..', '../public') }
-
-  run! if app_file == $PROGRAM_NAME
+  set :public_dir, proc { File.join(root, '..', '../public') }
+  enable :sessions
+  set :session_secret, 'super secret'
+  use Rack::Flash
 end

@@ -1,4 +1,4 @@
-class Chat < Sinatra::Base
+class App < Sinatra::Base
   get '/users/new' do
     @user = User.new
     erb :sign_up
