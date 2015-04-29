@@ -11,6 +11,8 @@
       <a href='sessions/new' class='not-signed-in-buttons'>Sign in</a>
     </container>
 
+  <% else %>
+    Welcome, <%= current_user.name %>
   <% end %>
   
 </body>

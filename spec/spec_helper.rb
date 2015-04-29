@@ -1,3 +1,4 @@
+ENV['RACK_ENV'] = 'test'
 require_relative '../app/server'
 require 'database_cleaner'
 require 'capybara/rspec'
@@ -5,7 +6,6 @@ require 'tilt/erubis'
 
 Capybara.app = App
 
-ENV['RACK_ENV'] = 'test'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

@@ -7,5 +7,12 @@ $('#textSubmit').click(function(){
 })
 
 ws.onmessage = function(message){
-  $('#messages').append($('<li>').text(message.data));
+  var user = JSON.parse(message.data)
+  if(user.message === ' has joined the room'){
+    $('#messages').append($('<li>').text(user.name + user.message));
+  } else if (user.message === ' has left the room'){
+
+  } else {
+    $('#messages').append($('<li>').text(user.name + ': ' + user.message));
+  }
 };

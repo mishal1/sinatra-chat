@@ -1,16 +1,17 @@
 <head>
   <link rel="stylesheet" type="text/css" href="/css/reset.css"> 
+  <link rel="stylesheet" type="text/css" href="/css/app.css"> 
 </head>
 
 <body>
 
   <% if current_user %>
-    Welcome, <%= current_user.name %>
     <form method='post' action='/sessions/delete'>
       <input type='hidden' name='method' value='delete'>
-      <input type='submit' value='Sign out'>
+      <input id ='signout' type='submit' value='Sign out'>
     </form>
   <% end %>
+  
   <ul id='error'>
   <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
